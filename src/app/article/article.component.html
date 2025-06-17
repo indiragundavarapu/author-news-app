@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <label for="authorInput" class="form-label">Search Articles by Author</label>
+  <input
+    id="authorInput"
+    class="form-control form-control-sm"
+    [(ngModel)]="authorName"
+    (input)="filterByAuthor()"
+    placeholder="Enter author's name or keyword"
+  />
+
+  <ul class="list-group mt-3">
+    <li *ngFor="let article of articles" class="list-group-item">
+      <h5>{{ article.title }}</h5>
+      <p><strong>Author:</strong> {{ article.author }}</p>
+      <p class="text-muted">{{ article.description }}</p>
+    </li>
+  </ul>
+</div>
+

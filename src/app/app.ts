@@ -1,12 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { ArticleComponent } from './article/article.component';
 
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-})
-export class App {
-  protected title = 'author-news-app';
-}
+bootstrapApplication(ArticleComponent, {
+  providers: [provideHttpClient()]
+});
